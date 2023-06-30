@@ -49,7 +49,7 @@ function App() {
             placeholder="Enter Favorite Sport"
             onChange={handleChange}
           />
-          <button>Enter</button>
+          <button>Submit</button>
         </form>
       </div>
     </div>
