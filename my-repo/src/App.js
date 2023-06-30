@@ -21,11 +21,24 @@ function App() {
     setValue({ sport: "" });
   };
 
+  const handleDelete = (e) => {
+    e.preventDefault();
+    setSportsList(
+      sportsList.filter((id) => {
+        return id !== id;
+      })
+    );
+  };
+
   return (
     <div className="App">
       <h1>Favorite Sports</h1>
       {sportsList.map((sport) => {
-        return <li key={sport.id}>{sport.sport}</li>;
+        return (
+          <li onClick={handleDelete} key={sport.id}>
+            {sport.sport}
+          </li>
+        );
       })}
       <div>
         <form onSubmit={handleSubmit}>
